@@ -42,3 +42,36 @@ The following steps are only for _one_ of the group members to perform.
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+
+
+## User stories - They have the form: As a ______, I want to ______, because ______.
+- As a customer, i want to look at items, because i want to buy something.
+- as a customer, i want to chat with the seller, because i want to know if the item is available.
+- as a customer, i want to filter the items(how?), because im looking for somesthing in particular.
+- as a buyer/customer, i want to have a favorites list, because i want to come back to the item. 
+- as a seller, i want to be able to list an item, because i want to sell it.
+- *as a seller, i want to be able to chat with customers via email, because i want to meet up with them.
+- as a seller, i want to be able to mark an item as sold, because i have sold the item.
+- 
+___________NOTES/STRETCH WORK___________
+- make sure tags are attached in the database for each product. - array or single tag.
+- each item should have a status - default active - or each item can be deleted from the database. - history of sold items
+- account profile / settings 
+- update password - authentication 
+- authorization of custsomers who are not logged in - what can they see. 
+- how many times a customer has visited a page
+- reviews for items and sellers.
+- 
+
+
+##ROUTES
+- home
+- register
+- login
+- logout - on every page
+- product pages
+- search page
+- user profile page
+- admin page
+- message
+- 
