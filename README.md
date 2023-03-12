@@ -70,8 +70,8 @@ ___________NOTES/STRETCH WORK___________
 - login
 - logout - on every page
 - product pages
-- search page
+- search bar?
 - user profile page
 - admin page
-- message
+- 
 - 

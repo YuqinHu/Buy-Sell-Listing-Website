@@ -5,9 +5,17 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-parser');
+
 
 const PORT = process.env.PORT || 8080;
 const app = express();
+
+app.use(cookieSession({
+  name: 'cookies',
+  keys: ['cookie', 'test']
+}));
+
 
 app.set('view engine', 'ejs');
 
@@ -31,6 +39,10 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const loginRoute = require("./routes/login");
+const logoutRoute = require("./routes/logout");
+const registerRoute = require("./routes/register");
+const userProfileRoute = require("./routes/user_profile");
+const productRoute = require("./routes/:id.js");
 //const usersRoutes = require('./routes/users');
 
 // Mount all resource routes
@@ -39,6 +51,10 @@ const loginRoute = require("./routes/login");
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/login', loginRoute);
+app.use('/logout', logoutRoute);
+app.use('/register', registerRoute);
+app.use('/register', userProfileRoute);
+app.use('/:id', productRoute);
 //app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -47,6 +63,8 @@ app.use('/login', loginRoute);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
+
+
   res.render('index');
 });
 
