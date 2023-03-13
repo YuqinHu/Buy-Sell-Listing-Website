@@ -6,4 +6,25 @@ router.get("/", (req, res) => {
   res.render('login')
 });
 
+router.post("/", (req, res) => {
+const username = req.body.username;
+const password = req.body.password;
+
+if (!username || !password){
+  return res.status(401).send("please fill both input fields")
+}
+  let foundUser = null;
+  for (const userId in users){
+    const user = users[userId];
+    if (user.username === username){
+      foundUser = user;
+    }
+  }
+  if (!foundUser){
+    return res.status(400).send('no user with that username found')
+  }
+
+
+});
+
 module.exports = router;
