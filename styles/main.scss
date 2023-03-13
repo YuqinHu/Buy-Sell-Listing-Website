@@ -3,10 +3,10 @@ $h2Font: Bungee;
 
 body {
 
-  min-height: 100vh;
+  // min-height: 100vh;
   background-color: #000000;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   
 }
@@ -41,6 +41,10 @@ text-align: center;
   -webkit-transition: left 2s;
   -moz-transition: left 2s;
   -o-transition: left 2s;
+}
+.slide-container:hover {
+  box-shadow: 2px 2px 9px 9px#e2d086;
+  border-radius: 30px;
 }
 .slider-image {
   float: left;
@@ -77,8 +81,37 @@ text-align: center;
 
 .section {
 display: flex;
-margin-top: 5%;
+margin-top: 3%;
+flex-direction: row-reverse;
+margin-bottom: 2%;
+
 }
 .product-Sec {
+margin-left: 3%;
+width: 400px;
+height: 280px;
+text-align: center;
+position: relative;
+}
+.product-Sec:hover {
+  box-shadow: 1px 1px 6px 6px#e2d086;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: xxx-large;
+}
 
+@media only screen and (min-width:768px) and (max-width:1024px) {
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+ 
+  }
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+  
 }

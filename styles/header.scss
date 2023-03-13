@@ -1,11 +1,107 @@
 $display: flex;
-// $logoColor: #fdcd15;
+
 header {
 display: $display;
-flex-direction: row;
-justify-content: space-around;
+flex-direction: column;
+align-items: center;
+width: 100%;
+height: 300px;
 }
 
 .logo {
   margin-top: 5%;
+}
+$myfirstDis: flex;
+$borderstyle: solid;
+$Width: 100%;
+$borderColor: #fdcd15;
+$navBackgroundColor: #fdcd15;
+$heigth: 80px;
+$buttonBackColor: black;
+$buttonColor: white;
+$font: Bungee;
+$fontsize: 20px;
+$searchcolor: black;
+$aHoverColor: gray;
+$aColor: black;
+$bottonHoverColor: gray;
+$proBackColor: black;
+.nav {
+  position: fixed;
+  display: $myfirstDis;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-style: $borderstyle;
+  width: $Width;
+  border-color: $borderColor;
+  background-color: $navBackgroundColor;
+  height: $heigth;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  margin-top: 5%;
+  font-family: $font;
+  font-size: $fontsize;
+  color: black
+ 
+
+}
+
+button {
+background-color: $buttonBackColor;
+color: $buttonColor;
+}
+button:hover {
+  color: $bottonHoverColor
+}
+.a {
+  color: $aColor;
+  text-decoration: none;
+}
+.a:hover {
+  color: $aHoverColor
+}
+
+.search {
+background-color: $searchcolor;
+color: white;
+}
+
+#select-pro {
+  background-color: $proBackColor;
+  color: white;
+  
+}
+@media only screen and (min-width:768px) and (max-width:1024px) {
+  // .nav {
+  //   display: $myfirstDis;
+  //   flex-direction: row;
+  //   justify-content: space-evenly;
+  //   border-style: $borderstyle;
+  //   width: 50%;
+  //   border-color: $borderColor;
+  //   background-color: $navBackgroundColor;
+  //   height: 60px;
+  //   padding-top: 1%;
+  //   padding-bottom: 3%;
+  //   margin-top: 2.5%;
+  //   font-family: $font;
+  //   font-size: 16px;
+  //   color: black
+  // }
+
+}
+
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+  
+}
+@media only screen and (min-width:768px) and (max-width:1024px) {
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+ 
+  }
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+  
 }
