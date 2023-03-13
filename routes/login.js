@@ -24,7 +24,12 @@ if (!username || !password){
     return res.status(400).send('no user with that username found')
   }
 
+  if (foundUser.password !== password){
+    return res.statusMessage(400).send ("username or password incorrect")
+  }
+  res.cookie('userId,', foundUser.id)
 
+  res.redirect('/')
 });
 
 module.exports = router;
