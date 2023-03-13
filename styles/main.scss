@@ -1,5 +1,6 @@
-$h2color: #fdcd15;
+$color: #fdcd15;
 $h2Font: Bungee;
+
 body {
 
   min-height: 100vh;
@@ -15,7 +16,7 @@ main {
   align-items: center;
 }
 .intruducing {
-color: $h2color;
+color: $color;
 font-family: $h2Font;
 background-color: #000000;
 background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
@@ -23,8 +24,6 @@ width: 100%;
 text-align: center;
 
 }
-
-
 .slide-container {
 width: 800px;
 height: 600px;
@@ -35,19 +34,18 @@ text-align: center;
 }
 
 .image-container {
-  width: 2400px;
+  width: 4000px;
   height: 600px;
   position: relative; 
   transition: left 2s;
-   -webkit-transition: left 2s;
-   -moz-transition: left 2s;
-   -o-transition: left 2s;
+  -webkit-transition: left 2s;
+  -moz-transition: left 2s;
+  -o-transition: left 2s;
 }
 .slider-image {
   float: left;
   margin: 0px;
   padding: 0px;
-  // padding-top: 2%;
 }
 .button-container {
   top: -30px;
@@ -70,9 +68,17 @@ text-align: center;
 #slider-image-3:target ~ .image-container {
   left: -1600px;
 }
-// #slider-image-4:target ~ .image-container {
-//   left: -2400px;
-// }
-// #slider-image-5:target ~ .image-container {
-//   left: -3200px;
-// }
+#slider-image-4:target ~ .image-container {
+  left: -2400px;
+}
+#slider-image-5:target ~ .image-container {
+  left: -3200px;
+}
+
+.section {
+display: flex;
+margin-top: 5%;
+}
+.product-Sec {
+
+}
