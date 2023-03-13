@@ -5,6 +5,8 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const db = require('./db/connection');
+// const multer = require('multer');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -44,8 +46,61 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+//Initialize multer to handle file uploads:
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, 'public/images');
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, `${Date.now()}-${file.originalname}`);
+//   }
+// });
+
+// const upload = multer({ storage });
+
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+app.get('/sell', (req, res) => {
+  res.render('sell');
+});
+
+app.post('/sell', (req, res) => {
+  const { title, description, price, category } = req.body;
+  const photoUrl = "www.textURL.com";
+  let nicheId = null;
+
+  switch (category) {
+    case 'clothing':
+      nicheId = 2;
+      break;
+    case 'electronics':
+      nicheId = 1;
+      break;
+    case 'home':
+      nicheId = 3;
+      break;
+    default:
+      res.status(400).send('Invalid category');
+      return;
+  }
+  return db
+    .query( `
+    INSERT INTO items (niche_id, name, description, price, photo_url)
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING id
+  `, 
+  [ nicheId, title, description, price, photoUrl])
+  .then((result) => {
+    console.log(result.rows);
+    return result.rows;
+  })
+  .catch((err) => {
+    console.log(err.message);
+    return null;
+  });
 });
 
 app.listen(PORT, () => {
