@@ -6,7 +6,9 @@ $navBackgroundColor: #fdcd15;
 $heigth: 80px;
 $buttonBackColor: black;
 $buttonColor: white;
-
+$font: Bungee;
+$fontsize: 16px;
+$searchcolor: black;
 .nav {
   display: $myfirstDis;
   flex-direction: row;
@@ -16,12 +18,24 @@ $buttonColor: white;
   border-color: $borderColor;
   background-color: $navBackgroundColor;
   height: $heigth;
-  padding-top: 1.5%;
+  padding-top: 1%;
   padding-bottom: 2%;
-  margin-top: 2%;
+  margin-top: 5%;
+  font-family: $font;
+  font-size: $fontsize;
+  color: black
 }
 
 button {
 background-color: $buttonBackColor;
 color: $buttonColor;
 }
+.a {
+  color: black;
+}
+
+.search {
+background-color: $searchcolor;
+color: white;
+}
+

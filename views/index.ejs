@@ -4,9 +4,9 @@
 <head>
   <title>Home Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -15,26 +15,69 @@
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/header.css" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Source+Sans+Pro:ital,wght@0,600;1,200&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Kolker+Brush&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Source+Sans+Pro:ital,wght@0,600;1,200&display=swap"
+    rel="stylesheet">
+
+
+
+  <script src="https://kit.fontawesome.com/27fe4e3881.js" crossorigin="anonymous"></script>
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+
 </head>
 
 <body>
   <header>
-  <div class="logo"><img src="/Docs/Logo.png"></div>
-  <nav class=" nav">
-    <a href=""> HOME </a>
-    <a href="">PRODUCTS</a>
-    <a href="">BUY & SELL</a>
-    <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search"/></form>
-    <form action="" method="post"><button type="submit">Login</button></form>
-    <form action="" method="post"><button type="submit">Register</button></form>
+    <div class="logo"><img src="/Docs/rubber-duck.png" width="200px" height="80px"></div>
+    <!-- <div class="logo"><img src="/Docs/rubber-duck.png" width="40px"></div> -->
+    <!-- <span><i id= "logo" class="fa-sharp fa-regular fa-duck"></i>Rubber Duck Clothing</span> -->
+    <!-- <span id = "tw"><i class="fa-brands fa-docker"></i>tweeter</span> -->
+    <nav class=" nav">
+      <!-- <img src="/Docs/rubber-duck.png"> -->
+
+      <a class="a" href=""> HOME </a>
+      <a class="a" href="">PRODUCTS</a>
+      <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search" /></form>
+      <form action="" method="post"><button type="submit">Login</button></form>
+      <form action="" method="post"><button type="submit">Register</button></form>
     </nav>
   </header>
-  
+  <main>
+    <h2 class="intruducing">Intruducing The World's Best Application</h2>
     
-    
-  
+    <div class="slide-container">
+      <span id="slider-image-1"></span>
+      <span id="slider-image-2"></span>
+      <span id="slider-image-3"></span>
+      <!-- <span id="slider-image-4"></span>
+      <span id="slider-image-5"></span> -->
+      <div class="image-container">
+        <img src="Docs/Adidas.jpg" class="slider-image">
+        <img src="Docs/Adidias1.jpg" class="slider-image">
+        <img src="Docs/Converse.jpg"class="slider-image">
+        <!-- <img src="https://static.nike.com/a/images/t_PDP_1728_v1/fjfip8ga1ep22vhxdcew/air-max-97-shoe-z3TlrlVN.png"
+          class="slider-image">
+        <img src="https://i.ebayimg.com/images/g/yEoAAOSwIDNj87yo/s-l500.jpg" class="slider-image"> -->
+      </div>
+      <div class="button-container">
+        <a href="#slider-image-1" class="slider-button"></a>
+        <a href="#slider-image-2" class="slider-button"></a>
+        <a href="#slider-image-3" class="slider-button"></a>
+        <!-- <a href="#slider-image-4" class="slider-button"></a>
+        <a href="#slider-image-5" class="slider-button"></a> -->
+      </div>
+    </div>
+  </main>
+
+
+
 </body>
 
 </html>

@@ -1,7 +1,11 @@
 $display: flex;
-
+// $logoColor: #fdcd15;
 header {
 display: $display;
 flex-direction: row;
-justify-content: space-between;
+justify-content: space-around;
+}
+
+.logo {
+  margin-top: 5%;
 }
