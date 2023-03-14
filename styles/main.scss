@@ -16,6 +16,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2%;
 }
 
 .slide-container {
@@ -25,7 +26,6 @@ margin-left: auto;
 margin-right: auto;
 overflow: hidden;
 text-align: center;
-margin-top: 5%;
 }
 
 .image-container {
@@ -79,6 +79,9 @@ display: flex;
 margin-top: 3%;
 flex-direction: row-reverse;
 margin-bottom: 2%;
+width: 100%;
+margin-left: auto;
+margin-right: auto;
 
 }
 .product-Sec {

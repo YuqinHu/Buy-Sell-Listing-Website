@@ -25,8 +25,9 @@ $aHoverColor: gray;
 $aColor: black;
 $bottonHoverColor: gray;
 $proBackColor: black;
+$position: absolute;
 .nav {
-  position: fixed;
+  position: $position;
   display: $myfirstDis;
   flex-direction: row;
   justify-content: space-evenly;
@@ -50,8 +51,8 @@ $proBackColor: black;
   text-align: center;
   height: 155px;
   padding: 30px;
-  position: fixed;
-  margin-top: 5%;
+  position: $position;
+  margin-top: 5.5%;
   
   }
 
@@ -91,7 +92,7 @@ color: white;
     text-align: center;
     height: 100px;
     // padding: 40px;
-    position: fixed;
+    position: $position;
     margin: 0;
     margin-top: 8%;
     }
@@ -106,7 +107,6 @@ color: white;
     height: 80px;
     padding-top: 1%;
     padding-bottom: 3%;
-    // margin-top: 2.5%;
     font-family: $font;
     font-size: 16px;
     color:  black
@@ -116,18 +116,6 @@ color: white;
 
 @media only screen and (min-width:481px) and (max-width:768px) {
   .intruducing {
-    // color: $color;
-    // font-family: $h2Font;
-    // font-size: 14px;
-    // background-color: #000000;
-    // background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
-    // width: 100%;
-    // text-align: center;
-    // height: 100px;
-    // // padding: 40px;
-    // position: fixed;
-    // margin: 0;
-    // margin-top: 10%;
     display: none;
     }
   .nav {
@@ -142,6 +130,8 @@ color: white;
     padding-bottom: 3%;
     font-family: $font;
     font-size: 14px;
+    margin-bottom: 2%;
+  
   }
  
   }
@@ -162,6 +152,7 @@ color: white;
       padding-bottom: 3%;
       font-family: $font;
       font-size: 12px;
+      margin-bottom: 4%;
     }
   
 }
