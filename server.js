@@ -88,6 +88,21 @@ app.get('/sell', (req, res) => {
   res.render('sell');
 });
 
+app.get('/users', (req, res) => {
+  return db
+  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE user_id = 1')
+  .then((items) => {
+    console.log("test:", items)
+    res.render('users', { items: items.rows });
+  })
+  .catch((err) => {
+    console.log(err.message);
+    return null;
+  });
+
+});
+
+
 app.post('/sell', (req, res) => {
   const { title, description, price, category } = req.body;
   const photoUrl = "www.textURL.com";
@@ -115,7 +130,6 @@ app.post('/sell', (req, res) => {
   `, 
   [ nicheId, title, description, price, photoUrl])
   .then((result) => {
-    console.log(result.rows);
     return result.rows;
   })
   .catch((err) => {
