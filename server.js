@@ -79,6 +79,20 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/users', (req, res) => {
+  return db
+  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE user_id = 1')
+  .then((items) => {
+    console.log("test:", items)
+    res.render('users', { items: items.rows });
+  })
+  .catch((err) => {
+    console.log(err.message);
+    return null;
+  });
+
+});
+
 app.get('/sell', (req, res) => {
   res.render('sell');
 });
