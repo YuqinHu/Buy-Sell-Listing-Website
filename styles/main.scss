@@ -1,13 +1,15 @@
-$color: #fdcd15;
-$h2Font: Bungee;
+
 
 body {
 
-  // min-height: 100vh;
+  min-height: 100vh;
   background-color: #000000;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
   font-size: 20px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
 }
 main {
@@ -15,15 +17,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
-.intruducing {
-color: $color;
-font-family: $h2Font;
-background-color: #000000;
-background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
-width: 100%;
-text-align: center;
 
-}
 .slide-container {
 width: 800px;
 height: 600px;
@@ -31,6 +25,7 @@ margin-left: auto;
 margin-right: auto;
 overflow: hidden;
 text-align: center;
+margin-top: 5%;
 }
 
 .image-container {
@@ -106,12 +101,41 @@ position: relative;
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px) {
+
+    .section {
+      display: flex;
+      margin-top: 6%;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4%;
+      }
+      .slide-container {
+        display: none;
+        }
 }
 
 @media only screen and (min-width:481px) and (max-width:768px) {
- 
+  .section {
+    display: flex;
+    margin-top: 9%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6%;
+    }
+    .slide-container {
+      display: none;
+      }
   }
 
 @media only screen and (min-width:320px) and (max-width:480px) {
-  
+  .section {
+    display: flex;
+    margin-top: 20%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 9%;
+    }
+    .slide-container {
+      display: none;
+      }
 }
