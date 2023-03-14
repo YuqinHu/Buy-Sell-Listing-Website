@@ -4,7 +4,7 @@ const router  = express.Router();
 //const userQueries = require('../db/schema/05_widgets');
 
 router.post("/logout", (req, res) => {
-
+  res.clearCookie('userId');
   res.redirect("/");
 });
 
