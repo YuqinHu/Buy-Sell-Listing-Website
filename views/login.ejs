@@ -12,25 +12,30 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/login.css" />
+
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/users.js"></script>
 </head>
 
 <body>
-  <h1>LOGIN TEST</h1>
-  <a href = "/"> home </a>
-  <a href = "register"> Register </a>
-  <ul id="TEST"></ul>
-
-  <form action="/login" method="POST">
+  
+  <form action="/user_profile" method="POST">
+    <h3>Login Here</h3>
     <label> Email </label>
-    <input type="email" name="username">
+    <input type="email" name="username" placeholder="Email">
     <br />
     <label> Password </label>
-    <input type="password" name="password">
+    <input type="password" name="password" placeholder="Password">
     <button type="submit"> login</button>
+    <div>
+    <a href = "register" class="register">register</a>
+    <br>
+    <a href = "/" class="register">home</a>
+  </div>
   </form>
+  
 </body>
 
 </html>
