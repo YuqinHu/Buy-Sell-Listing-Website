@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <title>user profile</title>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User profile</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <!-- <link rel="stylesheet" href="/styles/nav.css" /> -->
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/sell.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
 </head>
+
 <body>
-  <h2> you are logged in as <%= user.username %> </h2>
+  <header>
+      <nav class=" nav">
+          <img src="/Docs/rubber-duck.png" width="200px" height="60px">
+        <a class="a" href="/"> HOME </a>
+        <a href="/products" class="a"><option value="shoes">PRODUCTS</option></a>
+
+        <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search" /></form>
+        <a href="/login" method="post"><button type="button">Login</button></a>
+        <a href="/register" method="post"><button type="submit">Register</button></a>
+      </nav>
+      <h2 class="intruducing">USER'S PROFILE</h2>
+    </header>
+  <main>
+
+
+
+  </main>
+
+
 </body>
+
 </html>

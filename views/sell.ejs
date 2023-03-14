@@ -22,16 +22,36 @@
 
 <body>
   <header>
-    <img src="/Docs/rubber-duck.png" width="200px" height="60px">
-    <nav class=" nav">
-      <a href=""> HOME </a>
+    <!-- <div class="logo"><img src="/Docs/Logo.png"></div> -->
+    <!-- <nav class=" nav"> -->
+      <!-- <a href=""> HOME </a>
       <a href="">PRODUCTS</a>
-      <a href="">BUY & SELL</a>
-      <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search" /></form>
+      <a href="">BUY & SELL</a> -->
+      <!-- <form action="" method="post"><input class="search" type="text" placeholder="search" name="search"/></form>
       <form action="" method="post"><button type="submit">Login</button></form>
-      <form action="" method="post"><button type="submit">Register</button></form>
-    </nav>
-  </header>
+      <form action="" method="post"><button type="submit">Register</button></form> -->
+
+      <!-- <div class="logo"><img src="/Docs/rubber-duck.png" width="40px"></div> -->
+      <!-- <span><i id= "logo" class="fa-sharp fa-regular fa-duck"></i>Rubber Duck Clothing</span> -->
+      <!-- <span id = "tw"><i class="fa-brands fa-docker"></i>tweeter</span> -->
+      <nav class=" nav">
+          <img src="/Docs/rubber-duck.png" width="200px" height="60px">
+        <a class="a" href="/"> HOME </a>
+        <a href="/products" class="a"><option value="shoes">PRODUCTS</option></a>
+        <!-- <label class="a" for="select-pro">PRODUCTS<i class="fa-solid fa-right-long" id="arrow"></i>
+          <select name="products" id="select-pro">
+          <option value="">--Please choose an option</option>
+          <a href="/shoes"><option value="shoes">Shoes</option></a>
+          <option value="pants"><a href="/pants">Pants</a></option>
+          <option value="clothes"><a href="/clothes">Clothes</a></option>
+        </select>
+      </label> -->
+        <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search" /></form>
+        <a href="/login" method="post"><button type="button">Login</button></a>
+        <a href="/register" method="post"><button type="submit">Register</button></a>
+      </nav>
+      <h2 class="intruducing">Intruducing The World's Best Application</h2>
+    </header>
   <main>
     <form action="/sell" method="POST" class="mainContainer">
       <label for="title" class="title">Title:</label>
