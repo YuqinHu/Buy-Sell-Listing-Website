@@ -4,16 +4,17 @@
 <head>
   <title>Home Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/nav.css" />
+  <!-- <link rel="stylesheet" href="/styles/nav.css" /> -->
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/sell.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -21,42 +22,43 @@
 
 <body>
   <header>
-  <div class="logo"><img src="/Docs/Logo.png"></div>
-  <nav class=" nav">
-    <a href=""> HOME </a>
-    <a href="">PRODUCTS</a>
-    <a href="">BUY & SELL</a>
-    <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search"/></form>
-    <form action="" method="post"><button type="submit">Login</button></form>
-    <form action="" method="post"><button type="submit">Register</button></form>
+    <img src="/Docs/rubber-duck.png" width="200px" height="60px">
+    <nav class=" nav">
+      <a href=""> HOME </a>
+      <a href="">PRODUCTS</a>
+      <a href="">BUY & SELL</a>
+      <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search" /></form>
+      <form action="" method="post"><button type="submit">Login</button></form>
+      <form action="" method="post"><button type="submit">Register</button></form>
     </nav>
   </header>
   <main>
-		<form action="/sell" method="POST">
-			<label for="title">Title:</label>
-			<input type="text" name="title" id="title" required>
+    <form action="/sell" method="POST" class="mainContainer">
+      <label for="title" class="title">Title:</label>
+      <input type="text" name="title" id="title" required>
 
-			<label for="description">Description:</label>
-			<textarea name="description" id="description" required></textarea>
+      <label for="description" class="description">Description:</label>
+      <textarea name="description" id="description" required></textarea>
 
-			<label for="price">Price(CAD):</label>
-			<input type="number" name="price" id="price" required>
+      <label for="price" class="price">Price(CAD):</label>
+      <input type="number" name="price" id="price" required>
 
-			<label for="category">Category:</label>
-			<select name="category" id="category" required>
-				<option value="">-- Select Category --</option>
-				<option value="clothing">Clothes</option>
-				<option value="electronics">shoes</option>
-				<option value="home">Pants</option>
-			</select>
-			<label for="image">Image:</label>
-			<input type="file" name="image" id="image" required>
+      <label for="category" class="category">Category:</label>
+      <select name="category" id="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="clothing">Clothes</option>
+        <option value="electronics">Shoes</option>
+        <option value="home">Pants</option>
+      </select>
+      <label for="image" class="image">Image:</label>
+      <input type="file" name="image" id="image" required>
+      <div class="button">
+        <button type="submit" class="btn">post</button>
+      </div>
+    </form>
+  </main>
 
-			<button type="submit">Sell</button>
-		</form>
-	</main>
-    
-  
+
 </body>
 
 </html>

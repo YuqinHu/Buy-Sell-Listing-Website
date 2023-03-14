@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
-//const userQueries = require('../db/schema/05_widgets');
+const db = require('../db/connection');
+
 
 router.get("/", (req, res) => {
   res.render('register')

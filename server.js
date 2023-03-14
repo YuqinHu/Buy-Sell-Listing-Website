@@ -39,6 +39,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const loginRoute = require("./routes/login");
 const logoutRoute = require("./routes/logout");
 const registerRoute = require("./routes/register");
+const sellRoute = require("./routes/sell");
 // const userProfileRoute = require("./routes/user_profile");
 // const productRoute = require("./routes/:id.js");
 //const usersRoutes = require('./routes/users');
@@ -51,6 +52,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/register', registerRoute);
+app.use('/sell', sellRoute);
 // app.use('/register', userProfileRoute);
 // app.use('/:id', productRoute);
 //app.use('/users', usersRoutes);
@@ -93,45 +95,6 @@ app.get('/users', (req, res) => {
 
 });
 
-app.get('/sell', (req, res) => {
-  res.render('sell');
-});
-
-app.post('/sell', (req, res) => {
-  const { title, description, price, category } = req.body;
-  const photoUrl = "www.textURL.com";
-  let nicheId = null;
-
-  switch (category) {
-    case 'clothing':
-      nicheId = 2;
-      break;
-    case 'electronics':
-      nicheId = 1;
-      break;
-    case 'home':
-      nicheId = 3;
-      break;
-    default:
-      res.status(400).send('Invalid category');
-      return;
-  }
-  return db
-    .query( `
-    INSERT INTO items (niche_id, name, description, price, photo_url)
-    VALUES ($1, $2, $3, $4, $5)
-    RETURNING id
-  `,
-  [ nicheId, title, description, price, photoUrl])
-  .then((result) => {
-    console.log(result.rows);
-    return result.rows;
-  })
-  .catch((err) => {
-    console.log(err.message);
-    return null;
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
