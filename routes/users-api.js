@@ -10,6 +10,7 @@ const router  = express.Router();
 const userQueries = require('../db/queries/users');
 
 router.get('/', (req, res) => {
+  req.cookies.userId;
   userQueries.getUsers()
     .then(users => {
       res.json({ users });
