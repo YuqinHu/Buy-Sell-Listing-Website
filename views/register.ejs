@@ -10,11 +10,8 @@
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/login.css" />
   <link rel="stylesheet" href="/styles/register.css" />
 
 
@@ -24,19 +21,23 @@
 </head>
 
 <body>
-  <form action="/" method="POST">
+  <form action="/register" method="POST">
     <h3>Register Here</h3>
-    <label for="email"> Email </label>
-    <input type="email" name="email" placeholder="Email">
+    <label> Name </label>
+    <input type="text" name="name">
     <br />
-    <label for="password"> Password </label>
-    <input type="password" name="password" placeholder="Password" required >
-    <button type="submit">register</button>
-    <div>
-    <a href = "/login" class="redirect">login</a>
-    <br>
-    <a href = "/" class="redirect">home</a>
+    <label> Email </label>
+    <input type="email" name="email">
+    <br />
+    <label> Phone number </label>
+    <input type="number" name="phone_number">
+    <br />
+    <label> Password </label>
+    <input type="password" name="password">
+    <button type="submit"> Register</button>
+    <a href = "/login" class="login">login</a>
   </div>
+  
   </form>
 </body>
 
