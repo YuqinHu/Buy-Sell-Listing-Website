@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/register.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -23,14 +24,14 @@
   
   <form action="/user_profile" method="POST">
     <h3>Login Here</h3>
-    <label> Email </label>
+    <label for="username"> Email </label>
     <input type="email" name="username" placeholder="Email">
     <br />
-    <label> Password </label>
-    <input type="password" name="password" placeholder="Password">
+    <label for="password"> Password </label>
+    <input type="password" name="password" placeholder="Password" required >
     <button type="submit"> login</button>
     <div>
-    <a href = "register" class="register">register</a>
+    <a href = "/register" class="register">register</a>
     <br>
     <a href = "/" class="register">home</a>
   </div>

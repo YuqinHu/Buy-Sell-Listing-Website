@@ -39,6 +39,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const loginRoute = require("./routes/login");
 const logoutRoute = require("./routes/logout");
 const registerRoute = require("./routes/register");
+
 // const userProfileRoute = require("./routes/user_profile");
 // const productRoute = require("./routes/:id.js");
 //const usersRoutes = require('./routes/users');
