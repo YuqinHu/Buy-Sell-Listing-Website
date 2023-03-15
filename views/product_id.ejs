@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>product:id</title>
-</head>
-<body>
-  <div class="productId">
-    <template data-product-template>
-      <div class="product">
-        <div class="product name">
-          <div class="product type">
 
-          </div>
-        </div>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <!-- <link rel="stylesheet" href="/styles/nav.css" /> -->
+  <link rel="stylesheet" href="/styles/header.css" />
+
+
+  <title>product:id</title>
+
+
+</head>
+
+<body>
+  <header>
+    <nav class=" nav">
+      <img src="/Docs/rubber-duck.png" width="200px" height="60px">
+      <a class="a" href="/"> HOME </a>
+      <a href="/products" class="a">
+        <option value="shoes">PRODUCTS</option>
+      </a>
+
+      <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search" /></form>
+      <a href="/login" method="post"><button type="button">Login</button></a>
+      <a href="/register" method="post"><button type="submit">Register</button></a>
+    </nav>
+    <h2 class="intruducing"></h2>
+  </header>
+  <main>
+
+    <div class="image-container">
+      <a href="image goes here"><img class="slider-image"></a>
+      <div class="containerDescription">
+        production description goes here.
       </div>
-    </template>
+    </div>
+
+
+
+  </main>
+
   </div>
 
 
 </body>
+
 </html>

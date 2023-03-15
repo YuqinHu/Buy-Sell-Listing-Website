@@ -42,7 +42,7 @@ const registerRoute = require("./routes/register");
 const sellRoute = require("./routes/sell");
 const userProfileRoute = require("./routes/user_profile");
 // const userProfileRoute = require("./routes/user_profile");
-// const productRoute = require("./routes/:id.js");
+const productRoute = require("./routes/product_id.js");
 const usersRoutes = require('./routes/users-api');
 
 // Mount all resource routes
@@ -56,7 +56,7 @@ app.use('/register', registerRoute);
 app.use('/sell', sellRoute);
 app.use('/user_profile', userProfileRoute);
 // app.use('/register', userProfileRoute);
-// app.use('/:id', productRoute);
+app.use('/product_id', productRoute);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
