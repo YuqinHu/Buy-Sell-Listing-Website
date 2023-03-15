@@ -39,10 +39,11 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const loginRoute = require("./routes/login");
 const logoutRoute = require("./routes/logout");
 const registerRoute = require("./routes/register");
-
+const sellRoute = require("./routes/sell");
+const userProfileRoute = require("./routes/user_profile");
 // const userProfileRoute = require("./routes/user_profile");
 // const productRoute = require("./routes/:id.js");
-//const usersRoutes = require('./routes/users');
+const usersRoutes = require('./routes/users-api');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,9 +53,11 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/register', registerRoute);
+app.use('/sell', sellRoute);
+app.use('/user_profile', userProfileRoute);
 // app.use('/register', userProfileRoute);
 // app.use('/:id', productRoute);
-//app.use('/users', usersRoutes);
+app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -80,45 +83,20 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/sell', (req, res) => {
-  res.render('sell');
-});
-
-app.post('/sell', (req, res) => {
-  const { title, description, price, category } = req.body;
-  const photoUrl = "www.textURL.com";
-  let nicheId = null;
-
-  switch (category) {
-    case 'clothing':
-      nicheId = 2;
-      break;
-    case 'electronics':
-      nicheId = 1;
-      break;
-    case 'home':
-      nicheId = 3;
-      break;
-    default:
-      res.status(400).send('Invalid category');
-      return;
-  }
+app.get('/users', (req, res) => {
   return db
-    .query( `
-    INSERT INTO items (niche_id, name, description, price, photo_url)
-    VALUES ($1, $2, $3, $4, $5)
-    RETURNING id
-  `,
-  [ nicheId, title, description, price, photoUrl])
-  .then((result) => {
-    console.log(result.rows);
-    return result.rows;
+  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE user_id = 1')
+  .then((items) => {
+    console.log("test:", items)
+    res.render('users', { items: items.rows });
   })
   .catch((err) => {
     console.log(err.message);
     return null;
   });
+
 });
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

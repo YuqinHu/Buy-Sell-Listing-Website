@@ -4,9 +4,9 @@
 <head>
   <title>Home Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -48,24 +48,25 @@
 			<label for="description" >Description:</label>
 			<textarea name="description" id="description" required ></textarea>
 
-			<label for="price">Price(CAD):</label>
-			<input type="number" name="price" id="price" required>
+      <label for="price" class="price">Price(CAD):</label>
+      <input type="number" name="price" id="price" required>
 
-			<label for="category">Category:</label>
-			<select name="category" id="category" required>
-				<option value="">-- Select Category --</option>
-				<option value="clothing">Clothes</option>
-				<option value="electronics">shoes</option>
-				<option value="home">Pants</option>
-			</select>
-			<label for="image">Image:</label>
-			<input type="file" name="image" id="image" required>
+      <label for="category" class="category">Category:</label>
+      <select name="category" id="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="clothing">Clothes</option>
+        <option value="electronics">Shoes</option>
+        <option value="home">Pants</option>
+      </select>
+      <label for="image" class="image">Image:</label>
+      <input type="file" name="image" id="image" required>
+      <div class="button">
+        <button type="submit" class="btn">post</button>
+      </div>
+    </form>
+  </main>
 
-			<button type="submit">Sell</button>
-		</form>
-	</main>
-    
-  
+
 </body>
 
 </html>
