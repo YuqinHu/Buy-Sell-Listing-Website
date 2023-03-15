@@ -57,7 +57,7 @@ app.use('/sell', sellRoute);
 app.use('/user_profile', userProfileRoute);
 // app.use('/register', userProfileRoute);
 // app.use('/:id', productRoute);
-app.use('/users', usersRoutes);
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -71,7 +71,11 @@ app.get('/', (req, res) => {
     res.render('login');
     return;
   }
-  res.render('index');
+  const username = req.cookies.username;
+  templateVars = {
+      user: username,
+  };
+  res.render('index', templateVars);
 });
 
 app.get('/users', (req, res) => {
@@ -80,10 +84,16 @@ app.get('/users', (req, res) => {
     res.render('login');
     return;
   }
+
   return db
   .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE user_id = 1')
   .then((items) => {
-    res.render('users', { items: items.rows });
+    const username = req.cookies.username;
+    templateVars = {
+        user: username,
+        items: items.rows
+    };
+    res.render('users', templateVars);
   })
   .catch((err) => {
     console.log(err.message);

@@ -3,8 +3,10 @@ const { route } = require('./login');
 const router  = express.Router();
 //const userQueries = require('../db/schema/05_widgets');
 
-router.post("/logout", (req, res) => {
+router.post("/", (req, res) => {
+  console.log("logout")
   res.clearCookie('userId');
+  res.clearCookie('username');
   res.redirect("/");
 });
 
