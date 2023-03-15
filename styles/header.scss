@@ -59,6 +59,8 @@ $position: absolute;
 button {
 background-color: $buttonBackColor;
 color: $buttonColor;
+width: 150px;
+border-radius: 10px;
 }
 button:hover {
   color: $bottonHoverColor

@@ -12,32 +12,41 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/sell.css" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+  href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Source+Sans+Pro:ital,wght@0,600;1,200&display=swap"
+  rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Bungee&family=Kolker+Brush&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Source+Sans+Pro:ital,wght@0,600;1,200&display=swap"
+  rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/27fe4e3881.js" crossorigin="anonymous"></script>
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 </head>
 
 <body>
   <header>
-  <div class="logo"><img src="/Docs/Logo.png"></div>
   <nav class=" nav">
-    <a href=""> HOME </a>
-    <a href="">PRODUCTS</a>
-    <a href="">BUY & SELL</a>
-    <form action="" method="post"><input class="search" type="text" placeholder="serach" name="search"/></form>
-    <form action="" method="post"><button type="submit">Login</button></form>
-    <form action="" method="post"><button type="submit">Register</button></form>
+    <img src="/Docs/rubber-duck.png" width="200px" height="60px">
+      <a class="a" href="/"> HOME </a>
+      <a href="/products" class="a"><option value="shoes">PRODUCTS</option></a>
+      <a href="/login" ><button type="submit">Login</button></a>
+      <a href="/register"><button type="submit">Register</button></a>
     </nav>
   </header>
   <main>
-		<form action="/sell" method="POST">
+		<form action="/sell" method="POST" id="seconForm">
 			<label for="title">Title:</label>
 			<input type="text" name="title" id="title" required>
 
-			<label for="description">Description:</label>
-			<textarea name="description" id="description" required></textarea>
+			<label for="description" >Description:</label>
+			<textarea name="description" id="description" required ></textarea>
 
 			<label for="price">Price(CAD):</label>
 			<input type="number" name="price" id="price" required>
