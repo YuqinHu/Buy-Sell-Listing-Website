@@ -10,8 +10,8 @@ $backgroundColor: rgba(255,255,255,0.13);
     box-sizing: border-box;
 }
 
-main{
-    height: 700px;
+form{
+    height: 520px;
     width: 400px;
     background-color: $backgroundColor;
     position: absolute;
@@ -23,19 +23,21 @@ main{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px #fdcd15;
     padding: 50px 35px;
-    margin-top: 15%;
 }
-main *{
+form *{
     font-family: $font;
-    color: black;
+    color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
-textarea {
-  width: 300px;
-  height: 80px
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
 }
+
 label{
     display: block;
     margin-top: 30px;
@@ -56,7 +58,7 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-main button{
+button{
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
