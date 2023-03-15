@@ -5,15 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/register.css" />
+
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
   <title>register</title>
 </head>
-<body>
-  <a href = "/"> home </a>
-  <a href = "login"> login </a>
-  <h1>Register</h1>
 
+<body>
   <form action="/register" method="POST">
+    <h3>Register Here</h3>
     <label> Name </label>
     <input type="text" name="name">
     <br />
@@ -26,8 +32,7 @@
     <label> Password </label>
     <input type="password" name="password">
     <button type="submit"> Register</button>
+  </div>
   </form>
-
-
 </body>
 </html>
