@@ -61,29 +61,24 @@ app.use('/register', registerRoute);
 // Separate them into separate routes files (see above).
 
 
-//Initialize multer to handle file uploads:
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, 'public/images');
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, `${Date.now()}-${file.originalname}`);
-//   }
-// });
-
-// const upload = multer({ storage });
-
 app.get('/', (req, res) => {
-
-
+  //return to login page if not login
+  if (!req.cookies.userId) {
+    res.render('login');
+    return;
+  }
   res.render('index');
 });
 
 app.get('/users', (req, res) => {
+  //return to login page if not login
+  if (!req.cookies.userId) {
+    res.render('login');
+    return;
+  }
   return db
   .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE user_id = 1')
   .then((items) => {
-    console.log("test:", items)
     res.render('users', { items: items.rows });
   })
   .catch((err) => {
@@ -97,17 +92,9 @@ app.get('/sell', (req, res) => {
   res.render('sell');
 });
 
-app.get('/users', (req, res) => {
-  return db
-  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE user_id = 1')
-  .then((items) => {
-    res.render('users', { items: items.rows });
-  })
-  .catch((err) => {
-    console.log(err.message);
-    return null;
-  });
-
+app.get('/logout', (req, res) => {
+  res.clearCookie('userId');
+  res.redirect('/login');
 });
 
 

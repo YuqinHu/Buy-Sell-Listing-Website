@@ -21,12 +21,12 @@ router.post("/", (req, res) => {
     if (result.rows[0].password !== password) {
       throw new Error('Invalid password');
     }
+    res.cookie('userId', result.rows[0].id); 
     if (result.rows[0].is_admin === true){
       res.redirect('/sell');
     } else {
       res.redirect('/');
     }
-    
   })
   .catch((err) => {
     res.status(401).send(err.message);
