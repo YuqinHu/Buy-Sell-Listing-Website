@@ -36,8 +36,14 @@
     <img src="/Docs/rubber-duck.png" width="200px" height="60px">
       <a class="a" href="/"> HOME </a>
       <a href="/products" class="a"><option value="shoes">PRODUCTS</option></a>
-      <a href="/login" ><button type="submit">Login</button></a>
-      <a href="/register"><button type="submit">Register</button></a>
+      <% if (user) { %>
+        <span class="user">welcome: <%= user %></span>
+        <form action="/logout" method="post"><button type="submit">Logout</button></form>
+      <% } else { %>
+        <form action="/login" method="post"><button type="submit">Login</button></form>
+      <% } %>
+      </nav>
+      <h2 class="intruducing">Intruducing The World's Best Application</h2>
     </nav>
   </header>
   <main>

@@ -3,10 +3,14 @@ const router = express.Router();
 const db = require('../db/connection');
 
 router.get('/', (req, res) => {
-  res.render('sell');
+  const username = req.cookies.username;
+  templateVars = {
+      user: username,
+  };
+  res.render('sell', templateVars);
 });
 
-router.post('/sell', (req, res) => {
+router.post('/', (req, res) => {
   const { title, description, price, category } = req.body;
   const photoUrl = "www.textURL.com";
   let nicheId = null;

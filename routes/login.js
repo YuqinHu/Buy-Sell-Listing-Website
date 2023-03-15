@@ -22,6 +22,7 @@ router.post("/", (req, res) => {
       throw new Error('Invalid password');
     }
     res.cookie('userId', result.rows[0].id); 
+    res.cookie('username', result.rows[0].name); 
     if (result.rows[0].is_admin === true){
       res.redirect('/sell');
     } else {

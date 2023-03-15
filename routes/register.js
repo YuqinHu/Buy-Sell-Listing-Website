@@ -19,13 +19,14 @@ router.post("/", (req, res) => {
       }
 
       // Email is unique, so we can insert the new user into the table
-      const insertQuery = 'INSERT INTO users (name, email, phone_number, password, is_admin) VALUES ($1, $2, $3, $4, $5)';
+      const insertQuery = 'INSERT INTO users (name, email, phone_number, password, is_admin) VALUES ($1, $2, $3, $4, $5) RETURNING *';
       const values = [name, email, phone_number, password, isAdmin];
       return db.query(insertQuery, values);
     })
     .then((result) => {
       // Set the user ID in a cookie to indicate that the user is logged in
-      res.cookie('user', result.rows[0].id);
+      console.log(result);
+      res.cookie('userId', result.rows[0].id);
       res.redirect('/');
     })
     .catch((err) => {
