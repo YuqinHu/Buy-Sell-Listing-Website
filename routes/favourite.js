@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
         id: userId,
         items: items.rows
     };
-    res.render('feature', templateVars);
+    res.render('favourite', templateVars);
   })
   .catch((err) => {
     console.log(err.message);
@@ -29,7 +29,7 @@ router.post('/cancel/:id', (req, res) => {
   const { id } = req.params
   console.log(req.body);
   return db
-  .query('UPDATE items SET is_featured = false WHERE id = $1', [id])
+  .query('UPDATE items SET is_favourite = false WHERE id = $1', [id])
   .then((items) => {
     res.redirect('/admin');
     return items.rows;
@@ -40,7 +40,7 @@ router.post('/:id', (req, res) => {
   const { id } = req.params
   console.log(req.body);
   return db
-  .query('UPDATE items SET is_featured = true WHERE id = $1', [id])
+  .query('UPDATE items SET is_favorite = true WHERE id = $1', [id])
   .then((items) => {
     res.redirect('/admin');
     return items.rows;
