@@ -1,6 +1,6 @@
 -- insert user and admin account
-INSERT INTO users (name, email, phone_number, password) VALUES ('test user', 'test.user@example.com', '987-654-3210', 'password');
 INSERT INTO users (name, email, phone_number, password, is_admin) VALUES ('Yuqin Hu', 'admin@example.com', '123-456-7890', 'adminpassword', TRUE);
+INSERT INTO users (name, email, phone_number, password) VALUES ('test user', 'test.user@example.com', '987-654-3210', 'password');
 
 -- insert 3 types of niches
 INSERT INTO niches (name) VALUES ('shoes');

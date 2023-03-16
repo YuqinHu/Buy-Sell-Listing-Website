@@ -34,27 +34,26 @@ app.use(express.static('public'));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
 const loginRoute = require("./routes/login");
 const logoutRoute = require("./routes/logout");
 const registerRoute = require("./routes/register");
 const sellRoute = require("./routes/sell");
+const adminRoute = require("./routes/admin");
 const userProfileRoute = require("./routes/user_profile");
+const soldRoute = require("./routes/sold");
 // const userProfileRoute = require("./routes/user_profile");
 // const productRoute = require("./routes/:id.js");
-const usersRoutes = require('./routes/users-api');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/register', registerRoute);
+app.use('/admin', adminRoute);
 app.use('/sell', sellRoute);
 app.use('/user_profile', userProfileRoute);
+app.use('/sold', soldRoute);
 // app.use('/register', userProfileRoute);
 // app.use('/:id', productRoute);
 

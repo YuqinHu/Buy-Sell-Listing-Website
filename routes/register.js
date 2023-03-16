@@ -27,6 +27,7 @@ router.post("/", (req, res) => {
       // Set the user ID in a cookie to indicate that the user is logged in
       console.log(result);
       res.cookie('userId', result.rows[0].id);
+      res.cookie('username', result.rows[0].name); 
       res.redirect('/');
     })
     .catch((err) => {
