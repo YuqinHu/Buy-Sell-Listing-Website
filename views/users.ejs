@@ -62,7 +62,6 @@
     <button type="submit">Filter</button>
   </form>
   <main>
-
     <% items.forEach(item => { %>
       <!-- <nav>
         <a href="/" class="heart"><i class="fa-regular fa-heart" ></i></a>
@@ -93,5 +92,14 @@
     <i class="fas fa-chevron-up"></i>
   </a>
 </body>
+
+  <script>
+    const filterForm = document.getElementById("filter-form");
+    filterForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const priceFilter = document.querySelector('input[name="price-filter"]:checked').value;
+      window.location.href = `/users?priceFilter=${priceFilter}`;
+    });
+  </script>
 
 </html>
