@@ -11,8 +11,10 @@ router.get('/', (req, res) => {
   .query('SELECT items.id as item_id, items.is_featured as is_feature, items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE items.is_featured = true')
   .then((items) => {
     const username = req.cookies.username;
+    const userId = req.cookies.userId;
     templateVars = {
         user: username,
+        id: userId,
         items: items.rows
     };
     res.render('feature', templateVars);
