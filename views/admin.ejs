@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
   <link rel="stylesheet" href="/styles/item.css" />
+  <link rel="stylesheet" href="/styles/users.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,9 +43,9 @@
       <a href="/feature" class="a" >FEATURES</a>
       <% if (user) { %>
         <span class="user">welcome Admin: <%= user %></span>
-        <form action="/logout" method="post"><button type="submit">Logout</button></form>
+        <form action="/logout" method="post"><button type="submit" class="nav-button">Logout</button></form>
       <% } else { %>
-        <form action="/login" method="post"><button type="submit">Login</button></form>
+        <form action="/login" method="post"><button type="submit" class="nav-button">Login</button></form>
       <% } %>
     </nav>
     <h2 class="intruducing">Admin Page</h2>
@@ -54,7 +55,7 @@
       <div class="item">
         <nav>
           <form action="/delete/<%= item.item_id %>" method="post">
-            <button class="heart" class="delete-button">&#215;</button>
+            <button class="heart" ><i class="fa-solid fa-trash"></i></button>
           </form>
         </nav>
         <img src="<%= item.photo_url %>">
@@ -63,7 +64,7 @@
         <p><%= item.description %></p>
         <p>Price: $<%= item.price %></p>
         <% if (item.is_sold == true) { %>
-          <form action="/sold/restock/<%= item.item_id %>" method="post"><button class="sold-button" style="background-color: brown;">Restock</button></form>
+          <form action="/sold/restock/<%= item.item_id %>" method="post"><button class="sold-button" style="background-color: #fdcd15;">Restock</button></form>
         <% } else { %>
         <form action="/sold/<%= item.item_id %>" method="post"><button class="sold-button">Sold</button></form>
         <% } %>
@@ -75,7 +76,9 @@
       </div>
     <% }); %>
   </main>
-
+  <a href="#" class="to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
 </body>
 
 </html>

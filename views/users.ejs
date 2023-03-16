@@ -48,9 +48,9 @@
       <a href="/feature" class="a">FEATURES</a>
       <% if (user) { %>
         <span class="user">welcome: <%= user %></span>
-        <form action="/logout" method="post"><button type="submit">Logout</button></form>
+        <form action="/logout" method="post"><button type="submit" class="nav-button">Logout</button></form>
         <% } else { %>
-          <form action="/login" method="post"><button type="submit">Login</button></form>
+          <form action="/login" method="post"><button type="submit" class="nav-button">Login</button></form>
           <% } %>
     </nav>
     <h2 class="intruducing">All Selling Items</h2>
@@ -74,10 +74,10 @@
         <p>Price: $<%= item.price %>
         </p>
       </div>
-      <div class="emailButton">
-        <button>
+      <div >
+        <button class="emailButton">
           <a
-            href="mailto: <%= item.email %> ?subject=Mail from rubber duck clothing&body=Hello, is this product still available? ">Contact Seller </a>
+            href="mailto: <%= item.email %> ?subject=Mail from rubber duck clothing&body=Hello, is this product still available? " class="a-button">Contact Seller </a>
 
       </div>
       <% }); %>

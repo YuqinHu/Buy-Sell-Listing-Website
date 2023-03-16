@@ -1,6 +1,8 @@
 main {
-  margin-top: 0px;
-  background-color: #f9f9f9;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: gray;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
 }
 
 /* Style the item container */
@@ -10,13 +12,14 @@ main {
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 570px;
+  height: 590px;
   margin: 20px;
   padding: 20px;
-  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  background-image: url(https://www.transparenttextures.com/patterns/black-linen-2.png);
 }
 
 /* Style the item image */
@@ -61,53 +64,85 @@ main {
   font-family: 'Roboto', sans-serif;
 }
 
-.emailButton{
-  background-color: #ff0000;
-  color: #f9f9f9;
-  border-radius: 10px;
-}
-.btn {
-  display: flex;
-  align-items: center;
-  background: none;
-  border: 1px solid lighten(white, 24%);
-  height: 48px;
-  letter-spacing: .25px;
-  border-radius: 10px;
-  cursor: pointer;
+// .emailButton{
+//   margin-top: auto;
+//   margin-bottom: auto;
+//   background-color: #080710;
+//   padding: 15px 0;
+//   font-size: 18px;
+//   font-weight: 600;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+// .btn {
+//   display: flex;
+//   align-items: center;
+//   background: none;
+//   border: 1px solid lighten(white, 24%);
+//   height: 48px;
+//   letter-spacing: .25px;
+//   border-radius: 10px;
+//   cursor: pointer;
   
-  &:focus {
-    outline: none;
-  }
+//   &:focus {
+//     outline: none;
+//   }
   
-  .mdi {
-    margin-right: 8px;
-  }
-}
+//   .mdi {
+//     margin-right: 8px;
+//   }
+// }
 
-.btn-delete {
-  font-size: 16px;
-  color: red;
+// .btn-delete {
+//   font-size: 16px;
+//   color: red;
   
-  >.mdi-delete-empty {
-    display: none;
-  }
+//   >.mdi-delete-empty {
+//     display: none;
+//   }
   
-  &:hover {
-    background-color: lighten(red, 48%);
+//   &:hover {
+//     background-color: lighten(red, 48%);
     
-    >.mdi-delete-empty {
-      display: block;
-    }
+//     >.mdi-delete-empty {
+//       display: block;
+//     }
     
-    >.mdi-delete {
-      display: none;
-    }
-  }
-  
+//     >.mdi-delete {
+//       display: none;
+//     }
+//   }
 
+//   &:focus {
+//     box-shadow: 0 0 0 4px lighten(red, 40%);
+//   }
+// }
+.sold-button {
   
-  &:focus {
-    box-shadow: 0 0 0 4px lighten(red, 40%);
-  }
+    margin-top: 5%;
+    width: 100px;
+    background-color: #080710;
+    color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.feature-button {
+  margin-top: 5%;
+    width: 100px;
+    background-color: #080710;
+    color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.sold-button:hover{
+  background-color: #555;
+}
+.feature-button:hover {
+  background-color: #555;
 }

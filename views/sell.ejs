@@ -39,9 +39,9 @@
     <a href="/feature" class="a" >FEATURES</a>
       <% if (user) { %>
         <span class="user">welcome: <%= user %></span>
-        <form action="/logout" method="post"><button type="submit">Logout</button></form>
+        <form action="/logout" method="post"><button type="submit" class="nav-button">Logout</button></form>
       <% } else { %>
-        <form action="/login" method="post"><button type="submit">Login</button></form>
+        <form action="/login" method="post"><button type="submit" class="nav-button">Login</button></form>
       <% } %>
   </header>
   <main>

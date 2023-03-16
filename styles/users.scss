@@ -26,7 +26,21 @@ html {
   pointer-events: auto;
   opacity: 1;
 }
-
-.button{
- color: white;
+.emailButton{
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #080710;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: fit-content;
+}
+.a-button{
+  color: white;
+  text-decoration: 0;
+}
+.a-button:hover {
+  color: brown;
 }
