@@ -11,16 +11,16 @@ $backgroundColor: rgba(255,255,255,0.13);
 }
 
 form{
-    height: 700px;
+
     width: 400px;
-    background-color: $backgroundColor;
+    background-color: rgba(255, 255, 255, 0.13);
     position: absolute;
-    // transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
+    top: 15%;
+    right: auto;
+    left: auto;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 40px #fdcd15;
     padding: 50px 35px;
 }
@@ -70,22 +70,13 @@ button{
     cursor: pointer;
 }
 
-.redirect{
-  color: rgba(255,255,255,0.27);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-}
-.redirect:hover {
- color: #eaf0fb;
-}
-
-.redirect{
-  color: rgba(255,255,255,0.27);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-}
-.redirect:hover {
- color: #eaf0fb;
-}
+.register{
+    color: rgba(255,255,255,0.27);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .register:hover {
+   color: #eaf0fb;
+  }
+  
