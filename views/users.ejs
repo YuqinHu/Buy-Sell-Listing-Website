@@ -55,7 +55,14 @@
     </nav>
     <h2 class="intruducing">All Selling Items</h2>
   </header>
+  <form id="filter-form" style="background-color:yellow;">
+    <label for="price-filter">Sort by price:</label>
+    <input type="radio" name="price-filter" value="low-to-high" checked>Low to high
+    <input type="radio" name="price-filter" value="high-to-low">High to low
+    <button type="submit">Filter</button>
+  </form>
   <main>
+
     <% items.forEach(item => { %>
       <!-- <nav>
         <a href="/" class="heart"><i class="fa-regular fa-heart" ></i></a>

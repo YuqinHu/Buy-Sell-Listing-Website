@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   }
 
   return db
-  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url, users.email as email FROM items JOIN niches ON items.niche_id = niches.id JOIN users ON users.id = items.user_id WHERE user_id = 1')
+  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url, users.email as email FROM items JOIN niches ON items.niche_id = niches.id JOIN users ON users.id = items.user_id WHERE items.is_sold = false')
   .then((items) => {
     console.log(items.rows);
     const username = req.cookies.username;

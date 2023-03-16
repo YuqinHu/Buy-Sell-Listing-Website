@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     return;
   }
   return db
-  .query('SELECT items.id as item_id, items.is_featured as is_feature, items.is_sold as is_sold, items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id ')
+  .query('SELECT items.id as item_id, items.is_featured as is_feature, items.is_sold as is_sold, items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id order by items.id ')
   .then((items) => {
     const username = req.cookies.username;
     templateVars = {
