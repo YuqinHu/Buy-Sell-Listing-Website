@@ -34,6 +34,8 @@ app.use(express.static('public'));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
+const homeRoute = require("./routes/home");
+const userRoute = require("./routes/users");
 const loginRoute = require("./routes/login");
 const logoutRoute = require("./routes/logout");
 const registerRoute = require("./routes/register");
@@ -49,6 +51,8 @@ const deleteRoute = require("./routes/delete");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
+app.use('/', homeRoute);
+app.use('/users', userRoute);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/register', registerRoute);
@@ -68,59 +72,31 @@ app.use('/delete', deleteRoute);
 // Separate them into separate routes files (see above).
 
 
-app.get('/', (req, res) => {
-  //return to login page if not login
-  if (!req.cookies.userId) {
-    res.render('login');
-    return;
-  }
-  const username = req.cookies.username;
-  const id = req.cookies.userId;
-  templateVars = {
-      user: username,
-  };
-  if (id == 1) {
-    return db
-    .query('SELECT items.id as item_id, items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE is_sold = false')
-    .then((items) => {
-      templateVars = {
-          user: username,
-          items: items.rows
-      };
-      res.render('admin', templateVars);
-    })
-    .catch((err) => {
-      console.log(err.message);
-      return null;
-    });
-  }
-  res.render('index', templateVars);
-});
 
-app.get('/users', (req, res) => {
-  //return to login page if not login
-  if (!req.cookies.userId) {
-    res.render('login');
-    return;
-  }
+// app.get('/users', (req, res) => {
+//   //return to login page if not login
+//   if (!req.cookies.userId) {
+//     res.render('login');
+//     return;
+//   }
 
-  return db
-  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url, users.email as email FROM items JOIN niches ON items.niche_id = niches.id JOIN users ON users.id = items.user_id WHERE user_id = 1')
-  .then((items) => {
-    console.log(items.rows);
-    const username = req.cookies.username;
-    templateVars = {
-        user: username,
-        items: items.rows
-    };
-    res.render('users', templateVars);
-  })
-  .catch((err) => {
-    console.log(err.message);
-    return null;
-  });
+//   return db
+//   .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url, users.email as email FROM items JOIN niches ON items.niche_id = niches.id JOIN users ON users.id = items.user_id WHERE user_id = 1')
+//   .then((items) => {
+//     console.log(items.rows);
+//     const username = req.cookies.username;
+//     templateVars = {
+//         user: username,
+//         items: items.rows
+//     };
+//     res.render('users', templateVars);
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//     return null;
+//   });
 
-});
+// });
 
 
 app.listen(PORT, () => {
