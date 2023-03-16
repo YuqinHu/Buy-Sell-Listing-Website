@@ -6,7 +6,7 @@ const users = require('../db/queries/users')
 router.get('/', (req, res) => {
   users.getUserByEmail(req.body.email)
   .then((response) => {
-
+    console.log(response);
     let templateVars = {
     username: response.name,
     email: response.email}

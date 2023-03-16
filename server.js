@@ -44,6 +44,7 @@ const userProfileRoute = require("./routes/user_profile");
 // const userProfileRoute = require("./routes/user_profile");
 const productRoute = require("./routes/product_id.js");
 const usersRoutes = require('./routes/users-api');
+const { emailUsers } = require('./db/queries/users');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -86,8 +87,9 @@ app.get('/users', (req, res) => {
   }
 
   return db
-  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE user_id = 1')
+  .query('SELECT items.name as item_name, price, niches.name as niche_name, description, photo_url, users.email as email FROM items JOIN niches ON items.niche_id = niches.id JOIN users ON users.id = items.user_id WHERE user_id = 1')
   .then((items) => {
+    console.log(items.rows);
     const username = req.cookies.username;
     templateVars = {
         user: username,

@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
   <link rel="stylesheet" href="/styles/item.css" />
+  <link rel="stylesheet" href="/styles/users.css" />
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,38 +32,56 @@
   <script src="https://kit.fontawesome.com/27fe4e3881.js" crossorigin="anonymous"></script>
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+
+
+
 </head>
 
 
 <body>
   <header>
     <nav class=" nav">
-        <img src="/Docs/rubber-duck.png" width="200px" height="60px">
+      <img src="/Docs/rubber-duck.png" width="200px" height="60px">
       <a class="a" href="/"> HOME </a>
       <a href="/users" class="a">PRODUCTS</a>
-      <a href="/favourite" class="a" >FAVOURITES</a>
-      <a href="/feature" class="a" >FEATURES</a>
+      <a href="/favourite" class="a">FAVOURITES</a>
+      <a href="/feature" class="a">FEATURES</a>
       <% if (user) { %>
         <span class="user">welcome: <%= user %></span>
         <form action="/logout" method="post"><button type="submit">Logout</button></form>
-      <% } else { %>
-        <form action="/login" method="post"><button type="submit">Login</button></form>
-      <% } %>
+        <% } else { %>
+          <form action="/login" method="post"><button type="submit">Login</button></form>
+          <% } %>
     </nav>
   </header>
   <main>
-    <% items.forEach(item => { %>
+    <% items.forEach(item=> { %>
       <div class="item">
         <img src="<%= item.photo_url %>">
-        <h2><%= item.item_name %></h2>
-        <p><%= item.niche_name %></p>
-        <p><%= item.description %></p>
-        <p>Price: $<%= item.price %></p>
+        <h2>
+          <%= item.item_name %>
+        </h2>
+        <p>
+          <%= item.niche_name %>
+        </p>
+        <p>
+          <%= item.description %>
+        </p>
+        <p>Price: $<%= item.price %>
+        </p>
       </div>
-    <% }); %>
+      <div class="emailButton">
+        <button>
+          <a
+            href="mailto: <%= item.email %> ?subject=Mail from rubber duck clothing&body=Hello, is this product still available? ">Contact Seller </a>
+
+      </div>
+      <% }); %>
   </main>
 
+  <a href="#" class="to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
 </body>
 
 </html>
-

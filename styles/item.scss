@@ -8,7 +8,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 1000px;
   height: 400px;
   margin: 20px;
   padding: 20px;
@@ -54,9 +54,14 @@ main {
 .item p:nth-child(5) {
   font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #000000;
   margin-top: 10px;
   margin-bottom: 0px;
   font-family: 'Roboto', sans-serif;
 }
 
+.emailButton{
+  background-color: #ff0000;
+  color: #f9f9f9;
+  border-radius: 10px;
+}
