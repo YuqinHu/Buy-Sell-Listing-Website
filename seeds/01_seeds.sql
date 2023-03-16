@@ -36,8 +36,8 @@ INSERT INTO items (user_id, niche_id, name, description, price, photo_url, is_fe
 VALUES (1, 3, 'Denim Shorts', 'Blue denim shorts with frayed hem', 20, 'https://cdn-img.prettylittlething.com/5/8/3/6/5836f54e85a59441e26d7074cebe20e6d821c1f7_CMH1344_6.jpg', true, false);
 INSERT INTO items (user_id, niche_id, name, description, price, photo_url)
 VALUES (1, 3, 'Yoga Pants', 'Black yoga pants with patterned waistband', 30, 'https://cdn.shopify.com/s/files/1/0267/4075/2568/products/3022_2_1.jpg?v=1639573546');
-INSERT INTO items (user_id, niche_id, name, description, price, photo_url, is_featured, is_sold)
-VALUES (1, 3, 'Cargo Pants', 'Beige cargo pants with multiple pockets', 45, 'https://media.boohoo.com/i/boohoo/bmm27395_ecru_xl/mens-ecru-plus-multi-pocket-cargo-trouser/?w=900&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit', true, true);
+INSERT INTO items (user_id, niche_id, name, description, price, photo_url)
+VALUES (1, 3, 'Cargo Pants', 'Beige cargo pants with multiple pockets', 45, 'https://media.boohoo.com/i/boohoo/bmm27395_ecru_xl/mens-ecru-plus-multi-pocket-cargo-trouser/?w=900&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit');
 
 -- -- insert user 1 favourite items
 -- INSERT INTO favourites (user_id, item_id)
