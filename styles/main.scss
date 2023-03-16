@@ -26,6 +26,10 @@ margin-left: auto;
 margin-right: auto;
 overflow: hidden;
 text-align: center;
+margin-top: 10%;
+margin-bottom: auto;
+object-fit: cover;
+border-radius: 7px;
 }
 
 .image-container {
@@ -36,6 +40,15 @@ text-align: center;
   -webkit-transition: left 2s;
   -moz-transition: left 2s;
   -o-transition: left 2s;
+}
+@keyframes move-image {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(3200px); }
+}
+
+/* Apply the animation to the image */
+div img {
+  animation: move-image 20s linear infinite;
 }
 .slide-container:hover {
   box-shadow: 2px 2px 9px 9px#e2d086;
