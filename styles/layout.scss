@@ -8,3 +8,23 @@
 *,*:before,*:after {
   box-sizing: inherit;
 }
+main nav {
+      
+  width: 100%;
+  color: #727272;
+  text-transform: uppercase;
+  padding: 20px;
+}
+  .heart {
+    
+    height: 24px;
+    width: 24px;
+    float: right;
+    margin-top: -3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+    .heart:hover {
+      fill: red;
+      color: #fdcd15;
+    }
