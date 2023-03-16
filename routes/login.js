@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
     res.cookie('userId', result.rows[0].id); 
     res.cookie('username', result.rows[0].name); 
     if (result.rows[0].is_admin === true){
-      res.redirect('/sell');
+      res.redirect('/admin');
     } else {
       res.redirect('/');
     }

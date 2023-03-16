@@ -34,8 +34,9 @@
   <header>
   <nav class=" nav">
     <img src="/Docs/rubber-duck.png" width="200px" height="60px">
-      <a class="a" href="/"> HOME </a>
-      <a href="/products" class="a"><option value="shoes">PRODUCTS</option></a>
+    <a class="a" href="/admin"> HOME </a>
+    <a href="/sell" class="a">Add sell items</a>
+    <a href="/feature" class="a" >FEATURES</a>
       <% if (user) { %>
         <span class="user">welcome: <%= user %></span>
         <form action="/logout" method="post"><button type="submit">Logout</button></form>
@@ -62,7 +63,7 @@
         <option value="home">Pants</option>
       </select>
       <label for="image" class="image">Image:</label>
-      <input type="file" name="image" id="image" required>
+      <input type="text" name="photoUrl" id="image" required>
       <div class="button">
         <button type="submit" class="btn">post</button>
       </div>

@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { title, description, price, category } = req.body;
-  const photoUrl = "www.textURL.com";
+  const { title, description, price, category, photoUrl } = req.body;
+  let user_id = req.cookies.userId;
   let nicheId = null;
 
   switch (category) {
@@ -31,13 +31,13 @@ router.post('/', (req, res) => {
   }
   return db
     .query(`
-    INSERT INTO items (niche_id, name, description, price, photo_url)
-    VALUES ($1, $2, $3, $4, $5)
+    INSERT INTO items (user_id, niche_id, name, description, price, photo_url)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING id
   `,
-      [nicheId, title, description, price, photoUrl])
+      [user_id, nicheId, title, description, price, photoUrl])
     .then((result) => {
-      console.log(result.rows);
+      res.redirect('/admin');
       return result.rows;
     })
     .catch((err) => {

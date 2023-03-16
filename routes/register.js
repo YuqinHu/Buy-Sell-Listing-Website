@@ -14,10 +14,14 @@ router.post("/", (req, res) => {
 
   db.query('SELECT * FROM users WHERE email = $1', [email])
     .then((result) => {
+      if (!password || !email || !phone_number || !name) {
+        throw new Error('please filled all field');
+      }
+      
       if (result.rows.length > 0) {
         throw new Error('Email already exists');
       }
-
+    
       // Email is unique, so we can insert the new user into the table
       const insertQuery = 'INSERT INTO users (name, email, phone_number, password, is_admin) VALUES ($1, $2, $3, $4, $5) RETURNING *';
       const values = [name, email, phone_number, password, isAdmin];
@@ -27,6 +31,7 @@ router.post("/", (req, res) => {
       // Set the user ID in a cookie to indicate that the user is logged in
       console.log(result);
       res.cookie('userId', result.rows[0].id);
+      res.cookie('username', result.rows[0].name); 
       res.redirect('/');
     })
     .catch((err) => {
