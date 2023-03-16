@@ -57,30 +57,21 @@
   </header>
   <main>
     <% items.forEach(item => { %>
-      <!-- <nav>
+      <nav>
         <a href="/" class="heart"><i class="fa-regular fa-heart" ></i></a>
-        </nav> -->
+        </nav>
       <div class="item">
         <img src="<%= item.photo_url %>">
-        <h2>
-          <%= item.item_name %>
-        </h2>
-        <p>
-          <%= item.niche_name %>
-        </p>
-        <p>
-          <%= item.description %>
-        </p>
-        <p>Price: $<%= item.price %>
-        </p>
+        <h2><%= item.item_name %></h2>
+        <p><%= item.niche_name %></p>
+        <p><%= item.description %></p>
+        <p>Price: $<%= item.price %></p>
       </div>
-      <div class="emailButton">
-        <button>
-          <a
-            href="mailto: <%= item.email %> ?subject=Mail from rubber duck clothing&body=Hello, is this product still available? ">Contact Seller </a>
+      <button>
+        <a href="mailto: <%= item.email %> ?subject=Mail from rubber duck clothing&body=Hello, is this product still available?">Contact Seller </a>
 
-      </div>
-      <% }); %>
+    </div>
+    <% }); %>
   </main>
 
   <a href="#" class="to-top">

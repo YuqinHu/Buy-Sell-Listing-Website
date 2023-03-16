@@ -55,7 +55,7 @@
   </header>
   <main>
     <% items.forEach(item => { %>
-      <% if (item.is_feature){%>
+      <% if (item.is_favorite){%>
       <div class="item">
           <img src="<%= item.photo_url %>">
           <h2><%= item.item_name %></h2>
