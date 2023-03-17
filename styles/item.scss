@@ -11,7 +11,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 550px;
   height: 590px;
   margin: 20px;
   padding: 20px;
@@ -67,15 +67,15 @@ main {
 
 .sold-button {
   
-    margin-top: 5%;
-    width: 100px;
-    background-color: #080710;
-    color: white;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
+  margin-top: 5%;
+  width: 90px;
+  height: 30px;
+  background-color: #080710;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 // .btn { // TODO What's this?
@@ -94,14 +94,14 @@ main {
 // }
 .feature-button {
   margin-top: 5%;
-    width: 100px;
-    background-color: #080710;
-    color: white;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 90px;
+  height: 30px;
+  background-color: #080710;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .sold-button:hover{
   background-color: #555;
@@ -117,14 +117,18 @@ main {
     background-color: gray;
     background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
   }
-  
+
+  // .mdi {  // TODO What's this?
+  //   margin-right: 8px;
+  // }
+
    /* Style the item container */
    .item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 450px;
     height: 500px;
     margin: 20px;
     padding: 20px;
@@ -134,11 +138,16 @@ main {
     background-color: white;
     background-image: url(https://www.transparenttextures.com/patterns/black-linen-2.png);
   }
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
 }
 
-// .mdi {  // TODO What's this?
-//   margin-right: 8px;
-// }
+
 
 @media only screen and (min-width:481px) and (max-width:768px) {
   main {
@@ -153,8 +162,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 450px;
+    width: 450px;
+    height: 500px;
     margin: 20px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -162,6 +171,12 @@ main {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
     background-image: url(https://www.transparenttextures.com/patterns/black-linen-2.png);
+  }
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
   }
 }
 
@@ -179,8 +194,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
     margin: 20px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -188,6 +203,12 @@ main {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
     background-image: url(https://www.transparenttextures.com/patterns/black-linen-2.png);
+  }
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
   }
 }
 

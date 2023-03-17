@@ -51,6 +51,7 @@ html {
   width: 24px;
   float: right;
   margin-top: -3px;
+  margin-bottom: 10%;
   border: 0;
   background-color: white;
 background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
@@ -59,3 +60,14 @@ background-image: url("https://www.transparenttextures.com/patterns/black-linen-
     transition: all 0.3s ease;
     color: brown;
   }
+.filter {
+  background-color: gray;
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
+    font-size: 20px;
+    align-items: center;
+    margin-top: 5%;
+  
+}
+
+
+
