@@ -64,59 +64,7 @@ main {
   font-family: 'Roboto', sans-serif;
 }
 
-// .emailButton{
-//   margin-top: auto;
-//   margin-bottom: auto;
-//   background-color: #080710;
-//   padding: 15px 0;
-//   font-size: 18px;
-//   font-weight: 600;
-//   border-radius: 5px;
-//   cursor: pointer;
-// }
-// .btn {
-//   display: flex;
-//   align-items: center;
-//   background: none;
-//   border: 1px solid lighten(white, 24%);
-//   height: 48px;
-//   letter-spacing: .25px;
-//   border-radius: 10px;
-//   cursor: pointer;
-  
-//   &:focus {
-//     outline: none;
-//   }
-  
-//   .mdi {
-//     margin-right: 8px;
-//   }
-// }
 
-// .btn-delete {
-//   font-size: 16px;
-//   color: red;
-  
-//   >.mdi-delete-empty {
-//     display: none;
-//   }
-  
-//   &:hover {
-//     background-color: lighten(red, 48%);
-    
-//     >.mdi-delete-empty {
-//       display: block;
-//     }
-    
-//     >.mdi-delete {
-//       display: none;
-//     }
-//   }
-
-//   &:focus {
-//     box-shadow: 0 0 0 4px lighten(red, 40%);
-//   }
-// }
 .sold-button {
   
     margin-top: 5%;
@@ -138,6 +86,7 @@ main {
   letter-spacing: .25px;
   border-radius: 10px;
   cursor: pointer;
+}
 
   &:focus {
     outline: none;
@@ -172,6 +121,7 @@ main {
   }
  
 }
+  }
 
 .btn-delete {
   font-size: 16px;
