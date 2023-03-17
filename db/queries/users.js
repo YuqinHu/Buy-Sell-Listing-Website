@@ -14,11 +14,4 @@ const getUserByEmail = (email) => {
     });
 };
 
-const emailUsers = (user_id) => {
-  return db.query('SELECT * FROM users JOIN items ON user_id = user.id WHERE user_id = $1;', [email])
-    .then(data => {
-      return data.rows[0];
-    });
-};
-
-module.exports = { getUsers, getUserByEmail, emailUsers };
+module.exports = { getUsers, getUserByEmail };

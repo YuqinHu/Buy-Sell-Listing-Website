@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     return;
   }
   return db
-  .query('SELECT items.id as item_id, items.is_featured as is_feature, items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE items.is_featured = true')
+  .query('SELECT items.id as item_id, items.is_featured as is_feature, items.name as item_name, items.price, items.description, items.photo_url FROM favorites JOIN items ON items.id = favorites.item_id WHERE favorites.user_id = $1;', [req.cookies.userId] )
   .then((items) => {
     const username = req.cookies.username;
     const userId = req.cookies.userId;
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
         id: userId,
         items: items.rows
     };
-    res.render('feature', templateVars);
+    res.render('favourite', templateVars);
   })
   .catch((err) => {
     console.log(err.message);
@@ -29,7 +29,7 @@ router.post('/cancel/:id', (req, res) => {
   const { id } = req.params
   console.log(req.body);
   return db
-  .query('UPDATE items SET is_featured = false WHERE id = $1', [id])
+  .query('UPDATE items SET is_favourite = false WHERE id = $1', [id])
   .then((items) => {
     res.redirect('/admin');
     return items.rows;
@@ -40,7 +40,7 @@ router.post('/:id', (req, res) => {
   const { id } = req.params
   console.log(req.body);
   return db
-  .query('UPDATE items SET is_featured = true WHERE id = $1', [id])
+  .query('UPDATE items SET is_favorite = true WHERE id = $1', [id])
   .then((items) => {
     res.redirect('/admin');
     return items.rows;

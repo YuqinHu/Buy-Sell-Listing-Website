@@ -129,6 +129,18 @@ main {
     border-radius: 5px;
     cursor: pointer;
 }
+.btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 1px solid lighten(white, 24%);
+  height: 48px;
+  letter-spacing: .25px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
 .feature-button {
   margin-top: 5%;
     width: 100px;
@@ -155,73 +167,36 @@ main {
     background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
   }
   
-  /* Style the item container */
-  .item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 500px;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    background-image: url(https://www.transparenttextures.com/patterns/black-linen-2.png);
+  .mdi {
+    margin-right: 8px;
   }
  
 }
 
-@media only screen and (min-width:481px) and (max-width:768px) {
-  main {
-    margin-top: 15%;
-    margin-bottom: 15%;
-    background-color: gray;
-    background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
+.btn-delete {
+  font-size: 16px;
+  color: red;
+  
+  >.mdi-delete-empty {
+    display: none;
   }
   
-  .item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 450px;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    background-image: url(https://www.transparenttextures.com/patterns/black-linen-2.png);
+  &:hover {
+    background-color: lighten(red, 48%);
+    
+    >.mdi-delete-empty {
+      display: block;
+    }
+    
+    >.mdi-delete {
+      display: none;
+    }
   }
-}
+  
 
-@media only screen and (min-width:320px) and (max-width:480px) {
-  main {
-    margin-top: 20%;
-    margin-bottom: 20%;
-    background-color: gray;
-    background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
-  }
   
-  /* Style the item container */
-  .item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 400px;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    background-image: url(https://www.transparenttextures.com/patterns/black-linen-2.png);
+  &:focus {
+    box-shadow: 0 0 0 4px lighten(red, 40%);
   }
   
 }
