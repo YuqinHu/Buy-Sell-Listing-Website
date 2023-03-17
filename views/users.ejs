@@ -63,20 +63,21 @@
   </form>
   <main>
     <% items.forEach(item => { %>
-      <nav>
-        <a href="/" class="heart"><i class="fa-regular fa-heart" ></i></a>
-        </nav>
+      
       <div class="item">
+          <nav>
+            <a href="/" class="heart"><i class="fa-regular fa-heart" ></i></a>
+          </nav>
         <img src="<%= item.photo_url %>">
         <h2><%= item.item_name %></h2>
         <p><%= item.niche_name %></p>
         <p><%= item.description %></p>
         <p>Price: $<%= item.price %></p>
       </div>
-      <div class="emailButton">
-        <button>
+      <div >
+        <button class="emailButton">
           <a
-            href="mailto: <%= item.email %> ?subject=Mail from rubber duck clothing&body=Hello, is this product still available? ">Contact Seller </a>
+            href="mailto: <%= item.email %> ?subject=Mail from rubber duck clothing&body=Hello, is this product still available? " class="a-button">Contact Seller </a>
 
     </div>
     <% }); %>
