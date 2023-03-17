@@ -61,19 +61,22 @@
       <span id="slider-image-4"></span>
       <span id="slider-image-5"></span>
       <div class="image-container">
-        <a href="users"><img src="https://i.insider.com/631f5256e8b500001850d09a?width=600&format=jpeg&auto=webp" width="800px" height="600px" class="slider-image"></a>
-        <a href="users"><img src="https://www.straight.com/files/v3/styles/gs_feature/public/images/15/09/320536_best_jeans_store_0.jpg?itok=La7-kuar"  width="800px" height="600px" class="slider-image"></a>
-        <a href="users"><img src="https://sneakernews.com/wp-content/uploads/2020/10/nasa-adidas-ultra-boost-4-grey-orange-metallic-grey-10.jpg?w=1140" width="800px" height="600px" class="slider-image"></a>
-        <a href="users"><img src="https://media.istockphoto.com/id/684134268/photo/blonde-young-woman-in-elegant-blue-summer-dress.jpg?s=612x612&w=0&k=20&c=exmMtwtxykCGvHInAX9kJCK0GlV_c4vmUqtxyD-vt2c="  width="800px" height="600px" class="slider-image"></a>
-        <a href="users"><img src="https://images-na.ssl-images-amazon.com/images/I/61yJUYaHMQL.jpg" width="800px" height="600px" class="slider-image"></a>
+        <% items.forEach(item => { %>
+          <a  href="feature"><img src="<%= item.photo_url %>" width="800px" height="600px" class="slider-image"></a>
+        <% }); %>
+        <!-- <a  href="users"><img src="https://i.insider.com/631f5256e8b500001850d09a?width=600&format=jpeg&auto=webp" width="800px" height="600px" class="slider-image"></a>
+        <a ><img src="https://www.straight.com/files/v3/styles/gs_feature/public/images/15/09/320536_best_jeans_store_0.jpg?itok=La7-kuar"  width="800px" height="600px" class="slider-image"></a>
+        <a ><img src="https://sneakernews.com/wp-content/uploads/2020/10/nasa-adidas-ultra-boost-4-grey-orange-metallic-grey-10.jpg?w=1140" width="800px" height="600px" class="slider-image"></a>
+        <a ><img src="https://media.istockphoto.com/id/684134268/photo/blonde-young-woman-in-elegant-blue-summer-dress.jpg?s=612x612&w=0&k=20&c=exmMtwtxykCGvHInAX9kJCK0GlV_c4vmUqtxyD-vt2c="  width="800px" height="600px" class="slider-image"></a>
+        <a ><img src="https://images-na.ssl-images-amazon.com/images/I/61yJUYaHMQL.jpg" width="800px" height="600px" class="slider-image"></a> -->
       </div>
-      <div class="button-container">
+      <!-- <div class="button-container">
         <a href="#slider-image-1" class="slider-button"></a>
         <a href="#slider-image-2" class="slider-button"></a>
         <a href="#slider-image-3" class="slider-button"></a>
         <a href="#slider-image-4" class="slider-button"></a>
         <a href="#slider-image-5" class="slider-button"></a>
-      </div>
+      </div> -->
     </div>
     <!-- <section class="section">
       <span class="product-Sec"><a href="/products"><img src="https://media.glamourmagazine.co.uk/photos/63b6f0ef543f9ea0cca5f0a7/4:3/w_1920,h_1440,c_limit/PLUS%20SIZE%20BRIDESMAID%20DRESS%20050123%20default-sq.jpg" width="400px" height="279px"><div class="centered">Clothes</div></a></span>
