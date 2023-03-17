@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     return;
   }
   return db
-  .query('SELECT items.id as item_id, items.is_featured as is_feature, items.name as item_name, items.price, items.description, items.photo_url FROM favorites JOIN items ON items.id = favorites.item_id WHERE favorites.user_id = $1;', [req.cookies.userId] )
+  .query('SELECT items.id as item_id, items.is_featured as is_feature, items.name as item_name, items.price, items.description, items.photo_url FROM favourites JOIN items ON items.id = favourites.item_id WHERE favourites.user_id = $1;', [req.cookies.userId] )
   .then((items) => {
     const username = req.cookies.username;
     const userId = req.cookies.userId;
@@ -40,7 +40,7 @@ router.post('/:id', (req, res) => {
   const { id } = req.params
   console.log(req.body);
   return db
-  .query('UPDATE items SET is_favorite = true WHERE id = $1', [id])
+  .query('UPDATE items SET is_favourite = true WHERE id = $1', [id])
   .then((items) => {
     res.redirect('/admin');
     return items.rows;
