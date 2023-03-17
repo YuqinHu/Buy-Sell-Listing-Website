@@ -47,7 +47,7 @@ The following steps are only for _one_ of the group members to perform.
 ## User stories - They have the form: As a ______, I want to ______, because ______.
 - As a customer, i want to look at items, because i want to buy something.
 - as a customer, i want to chat with the seller, because i want to know if the item is available.
-- as a customer, i want to filter the items(how?), because im looking for somesthing in particular.
+- as a customer, i want to filter the items(how?), because im looking for something in particular.
 - as a buyer/customer, i want to have a favorites list, because i want to come back to the item. 
 - as a seller, i want to be able to list an item, because i want to sell it.
 - *as a seller, i want to be able to chat with customers via email, because i want to meet up with them.
@@ -61,17 +61,14 @@ ___________NOTES/STRETCH WORK___________
 - authorization of custsomers who are not logged in - what can they see. 
 - how many times a customer has visited a page
 - reviews for items and sellers.
-- 
 
 
-##ROUTES
-- home
-- register
-- login
-- logout - on every page
-- product pages
-- search bar?
-- user profile page
-- admin page
-- 
-- 
+## how to install:
+- download all dependencies using 'npm i'.
+- 'cd' into the buy-sell-listing-website and install postgress.
+- once installed 'psql' into postgresql.
+- '\c midterm' to connect to the midterm database.
+- once connected run '\i migrations/01_schema.sql;' to create the tables.
+- now run '\i seeds/01_seeds.sql' to import in all the data for the database.
+- '\q' to exit psql and run 'npm run local'
+- ensure that no errors appeared and that the app is listening on port 8080.
