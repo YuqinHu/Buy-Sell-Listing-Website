@@ -38,7 +38,6 @@ router.post('/cancel/:id', (req, res) => {
 
 router.post('/:id', (req, res) => {
   const { id } = req.params
-  console.log(req.body);
   return db
   .query('UPDATE items SET is_featured = true WHERE id = $1', [id])
   .then((items) => {

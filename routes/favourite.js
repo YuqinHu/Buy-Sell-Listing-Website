@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     return;
   }
   return db
-  .query('SELECT items.id as item_id, items.is_featured as is_feature, items.name as item_name, items.price, items.description, items.photo_url FROM favourites JOIN items ON items.id = favourites.item_id WHERE favourites.user_id = $1;', [req.cookies.userId] )
+  .query('SELECT * FROM items WHERE id IN (SELECT item_id FROM favourites WHERE user_id = $1);', [req.cookies.userId] )
   .then((items) => {
     const username = req.cookies.username;
     const userId = req.cookies.userId;
@@ -25,26 +25,27 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/cancel/:id', (req, res) => {
-  const { id } = req.params
-  console.log(req.body);
+router.post('/:id', (req, res) => {
+  const { id } = req.params;
+  const userId = req.cookies.userId;
   return db
-  .query('UPDATE items SET is_favourite = false WHERE id = $1', [id])
+  .query('INSERT INTO favourites (user_id, item_id) VALUES ($1, $2)', [userId, id])
   .then((items) => {
-    res.redirect('/admin');
+    res.redirect('/users');
     return items.rows;
   })
 });
 
-router.post('/:id', (req, res) => {
-  const { id } = req.params
-  console.log(req.body);
+router.post('/cancel/:id', (req, res) => {
+  const { id } = req.params;
   return db
-  .query('UPDATE items SET is_favourite = true WHERE id = $1', [id])
+  .query('DELETE FROM favourites WHERE item_id = $1', [id])
   .then((items) => {
-    res.redirect('/admin');
+    res.redirect('/favourite');
     return items.rows;
   })
 });
+
+
 
 module.exports = router;
