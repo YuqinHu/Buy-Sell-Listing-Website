@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Users</title>
+  <title>favourite</title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,7 +55,9 @@
   </header>
   <main>
     <% items.forEach(item => { %>
-      <% if (item.is_favorite){%>
+      <nav>
+        <form action="/favourite/cancel/<%= item.id %>" method="post"><button class="feature-button"><i class="fa-regular fa-heart" ></i></button></form>
+      </nav>
       <div class="item">
           <img src="<%= item.photo_url %>">
           <h2><%= item.item_name %></h2>
@@ -63,7 +65,7 @@
           <p><%= item.description %></p>
           <p>Price: $<%= item.price %></p>
         </div>
-      <% } %>
+
     <% }); %>
   </main>
 

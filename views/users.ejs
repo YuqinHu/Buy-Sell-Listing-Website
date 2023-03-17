@@ -63,9 +63,10 @@
   </form>
   <main>
     <% items.forEach(item => { %>
+
       <nav>
-        <a href="/" class="heart"><i class="fa-regular fa-heart" ></i></a>
-        </nav>
+        <form action="/favourite/<%= item.item_id %>" method="post"><button class="feature-button"><i class="fa-regular fa-heart" ></i></button></form>
+      </nav>
       <div class="item">
         <img src="<%= item.photo_url %>">
         <h2><%= item.item_name %></h2>
