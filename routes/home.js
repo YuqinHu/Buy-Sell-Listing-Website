@@ -13,22 +13,24 @@ router.get('/', (req, res) => {
   templateVars = {
       user: username,
   };
+  return db
+  .query('SELECT items.id as item_id, items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE is_sold = false AND is_featured = true')
+  .then((items) => {
+    templateVars = {
+      user: username,
+      items: items.rows
+    };
   if (id == 1) {
-    return db
-    .query('SELECT items.id as item_id, items.name as item_name, price, niches.name as niche_name, description, photo_url FROM items JOIN niches ON items.niche_id = niches.id WHERE is_sold = false')
-    .then((items) => {
-      templateVars = {
-          user: username,
-          items: items.rows
-      };
-      res.render('admin', templateVars);
-    })
+    res.render('admin', templateVars);
+  } else {
+    res.render('index', templateVars);
+  }
+  })
     .catch((err) => {
       console.log(err.message);
       return null;
     });
-  }
-  res.render('index', templateVars);
+  
 });
 
 module.exports = router;
