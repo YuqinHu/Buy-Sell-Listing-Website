@@ -96,7 +96,7 @@ color: white;
     // padding: 40px;
     position: $position;
     margin: 0;
-    margin-top: 8%;
+    margin-top: 10%;
     }
   .nav {
     display: $myfirstDis;
@@ -128,13 +128,22 @@ color: white;
     width: 100%;
     background-color: #000000;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
-    padding-top: 25%;
+    padding-top: 35%;
     padding-bottom: 3%;
     font-family: $font;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 2%;
   
   }
+  .nav-button {
+    background-color: $buttonBackColor;
+    color: $buttonColor;
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 100%;
+
+    }
  
   }
 
@@ -153,8 +162,17 @@ color: white;
       padding-top: 40%;
       padding-bottom: 3%;
       font-family: $font;
-      font-size: 12px;
+      font-size: 14px;
       margin-bottom: 4%;
     }
+    .nav-button {
+      background-color: $buttonBackColor;
+      color: $buttonColor;
+      width: 150px;
+      border-radius: 10px;
+      margin-top: 5%;
+      margin-bottom: 100%;
+  
+      }
   
 }

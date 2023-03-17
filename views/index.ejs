@@ -42,14 +42,7 @@
       <a href="/users" class="a" >PRODUCTS</a>
       <a href="/favourite" class="a" >FAVOURITES</a>
       <a href="/feature" class="a" >FEATURES</a>
-      <!-- <label class="a" for="select-pro">PRODUCTS<i class="fa-solid fa-right-long" id="arrow"></i>
-        <select name="products" id="select-pro">
-        <option value="">--Please choose an option</option>
-        <a href="/shoes"><option value="shoes">Shoes</option></a>
-        <option value="pants"><a href="/pants">Pants</a></option>
-        <option value="clothes"><a href="/clothes">Clothes</a></option>
-      </select>
-    </label> -->
+      
     <% if (user) { %>
       <span class="user">welcome: <%= user %></span>
       <form action="/logout" method="post"><button type="submit" class="nav-button">Logout</button></form>
