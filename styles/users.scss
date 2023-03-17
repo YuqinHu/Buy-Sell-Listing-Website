@@ -36,6 +36,7 @@ html {
   cursor: pointer;
   width: 100%;
   height: fit-content;
+  text-decoration: none;
 }
 .a-button{
   color: white;
@@ -44,3 +45,17 @@ html {
 .a-button:hover {
   color: brown;
 }
+
+.heart {
+  height: 24px;
+  width: 24px;
+  float: right;
+  margin-top: -3px;
+  border: 0;
+  background-color: white;
+background-image: url("https://www.transparenttextures.com/patterns/black-linen-2.png");
+}
+  .heart:hover {
+    transition: all 0.3s ease;
+    color: brown;
+  }
